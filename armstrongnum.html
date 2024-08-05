@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+<script>
+ function performOperations(number) {
+  // Find the sum of all its digits
+  let sumOfDigits = 0;
+  let temp = number;
+  while (temp > 0) {
+    sumOfDigits += temp % 10;
+    temp = Math.floor(temp / 10);
+  }
+
+  // Check if it is an Armstrong number
+  let isArmstrong = false;
+  temp = number;
+  let sumOfCubes = 0;
+  while (temp > 0) {
+    let digit = temp % 10;
+    sumOfCubes += Math.pow(digit, 3);
+    temp = Math.floor(temp / 10);
+  }
+  if (sumOfCubes === number) {
+    isArmstrong = true;
+  }
+
+  // Check if it is a prime number
+  let isPrime = true;
+  if (number <= 1) {
+    isPrime = false;
+  } else {
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+  }
+
+  // Print all its factors
+  let factors = [];
+  for (let i = 1; i <= number; i++) {
+    if (number % i === 0) {
+      factors.push(i);
+    }
+  }
+
+  // Display the results
+  console.log(`Number: ${number}`);
+  console.log(`Sum of its digits: ${sumOfDigits}`);
+  console.log(`Is it an Armstrong number? ${isArmstrong ? "Yes" : "No"}`);
+  console.log(`Is it a prime number? ${isPrime ? "Yes" : "No"}`);
+  console.log(`Factors: ${factors.join(', ')}`);
+}
+
+// Example usage
+performOperations(153);
+
+</script>
+
+
+</body>
+</html>

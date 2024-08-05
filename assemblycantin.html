@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<Script>
+    
+let Protein = ['chicken', 'pork', 'tofu', 'beef', 'fish', 'beans'];
+let Grain = ['rice', 'pasta', 'corn', 'potato', 'quinoa', 'crackers'];
+let Vegetable = ['peas', 'green beans', 'kale', 'edamame', 'broccoli', 'asparagus'];
+let Beverage = ['juice', 'milk', 'water', 'soy milk', 'soda', 'tea'];
+let Dessert = ['apple', 'banana', 'more kale', 'ice cream', 'chocolate', 'kiwi'];
+let meals = [];
+
+function mealAssembly(numMeals){
+for(let i = 0 ; i < numMeals; i++)
+{
+    if(Protein.length > 0 && Grain.length > 0 && Vegetable.length > 0 && Beverage.length > 0 && Dessert.length > 0 )
+{
+    let protein = Protein.shift();
+    let grain = Grain.shift();
+    let vegetable = Vegetable.shift();
+    let beverage = Beverage.shift();
+    let dessert = Dessert.shift();
+
+    let meal = [protein, grain, vegetable, dessert];
+    meals.push(meal);
+}
+else{
+    console.log("Not enough ingredients to assemble more meals.");
+    break;
+}
+}
+}
+
+function askForNumber(){
+    
+    let inputNum;
+
+    while(true){
+    let numMeals = prompt("Enter the number of meals you want to assemble: ");
+    inputNum = Number(numMeals);
+     if(inputNum > 0 && inputNum <= 6 ){
+        return inputNum;
+     }
+     else{
+        console.log("Please enter a number between 1 and 6");                                           
+    }
+    } 
+}
+
+let numMeals = askForNumber();
+mealAssembly(numMeals);
+console.log(meals);
+
+
+    let passprompt = prompt("create a new password");
+    let passconfirm = prompt("confirm your password");
+    let string2 = "687";
+    function generatePassword(){
+}
+
+</Script>
+
+</body>
+</html>
